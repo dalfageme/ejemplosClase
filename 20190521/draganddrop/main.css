@@ -1,0 +1,29 @@
+body{
+    display: flex;
+}
+
+#izquierda{
+    flex: 40% 0 0;
+    background: #209920;
+    /* display: flex; */
+}
+
+#izquierda>img, #derecha>img{
+    width: 160px;
+    height: auto;
+}
+
+#derecha{
+    flex: 40% 0 0;
+    background: #108010;
+
+}
+
+body>img{
+    width: 20%;
+    flex: 20% 0 0;
+}
+
+.seleccionada{
+    transform: scale(1.6);
+}
