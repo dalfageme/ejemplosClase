@@ -1,0 +1,20 @@
+{
+  "name": "prueba1",
+  "description": "",
+  "main": "",
+  "authors": [
+    "David Alfageme <alfalfageme@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dalfageme/ejemplosClase",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}

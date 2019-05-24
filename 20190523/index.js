@@ -19,6 +19,21 @@ app.get('/contact', (req, res) => {
 })
 
 
+app.get('/info', (req, res) => {
+    res.send(req.query.name);
+})
+
+
+app.get('/name/:name', (req, res) => {
+    res.send(req.params.name);
+})
+
+
+app.post('/favorite', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+})
+
 app.listen(PORT, ()=> {
     console.log(`Servidor iniciado en http://localhost:${PORT}`);
 })
