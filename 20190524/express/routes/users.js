@@ -1,6 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var mysql = require('mysql2');
+
+let conn = mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  database:'neflis'
+})
 
 let users = [
   { id: 2, nombre: 'Juan'},
@@ -11,7 +18,10 @@ let users = [
 /* GET users listing. */
 router.get('/', (req, res) => {
   let user = req.query.apellido;
-  res.send('EL USUARIO ES: ' + user);
+  conn.query('SELECT * FROM films', (error, data) => {
+    res.render('films', {films: data});
+    
+  });
 });
 
 router.get('/:id', (req, res) => {
