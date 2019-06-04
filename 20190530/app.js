@@ -28,6 +28,10 @@ app.use(flash());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.use((req, res, next) => {
+  res.locals.user = req.session;
+  next();
+});
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -38,6 +42,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/films', filmsRouter); // Ruta para web peliculas
 app.use('/api/films', filmsApiRouter); // Ruta para api peliculas
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -3,10 +3,18 @@ import './App.css';
 import Counter from './components/counter';
 
 function App() {
+  let counters= [
+      100,
+      200,
+      300,
+      23
+    ]
+
   return (
     <div className="App">
-      <Counter nombre="david" inicio="100" fin="200"></Counter>
-      <Counter nombre="david" inicio="200" fin="200"></Counter>
+    { counters.map((init,i) => {
+      return <Counter key={i}  inicio={init} fin="200"></Counter>
+    })}
     </div>
   );
 }
