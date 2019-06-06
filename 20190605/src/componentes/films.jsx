@@ -7,7 +7,7 @@ class Films extends Component{
         this.state = {
             films: [
                 {title: 'Shrek', image: 'https://i.ytimg.com/vi/wC2ANCka21I/maxresdefault.jpg'},
-                {title: 'Matrix', image: 'https://pics.filmaffinity.com/the_matrix-155050517-large.jpg'}
+                {title: 'Matrix', image: '', subtitle: 'Las pastis'}
             ],
             elements: [
                 <div>Hola</div>,
