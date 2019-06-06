@@ -9,19 +9,41 @@ class Films extends Component{
                 {title: 'Shrek', image: 'https://i.ytimg.com/vi/wC2ANCka21I/maxresdefault.jpg'},
                 {title: 'Matrix', image: '', subtitle: 'Las pastis'}
             ],
-            elements: [
-                <div>Hola</div>,
-                <p> Adios</p>,
-                <span>Mundo</span>
-            ]
+            title: '',
         }
+        this.onAddFilm = this.onAddFilm.bind(this);
+    }
+
+    submit(data){
+        console.log('submit form');
+        console.log(data);
+    }
+
+    onTitleChanges(event){
+        this.setState({
+            title: event.target.value
+        })
+    }
+
+    onAddFilm(event){
+        console.log(this.state.title);
+        this.setState({
+            films: [
+                ...this.state.films,
+                {title: this.state.title}
+            ],
+            title: '',
+        })
+        event.preventDefault();
     }
 
     render(){
         return <div>
             <h1>Mis peliculas</h1>
-            {this.state.elements}            
-            {this.state.films.map(film => <Film {...film}/>)}
+            {this.state.films.map((film, i) => <Film key={i} {...film}/>)}
+            <form onSubmit={this.onAddFilm}>
+                <input name="title" value={this.state.title} onChange={(e) => this.onTitleChanges(e)}/>
+            </form>
         </div>
     }
 }
