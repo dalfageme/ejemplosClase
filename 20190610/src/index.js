@@ -5,12 +5,15 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Index from './components/index';
 import Users from './components/users';
-
+import Films from './components/films';
+import Detail from './components/detail';
 
 const router = (
     <BrowserRouter>
         <Switch>
             <Route path="/" component={Index} exact/>
+            <Route path="/films" component={Films} exact/>
+            <Route path="/films/:id" component={Detail} exact/>
             <Route path="/users/:idUsuario" component={Users}/>
         </Switch>
     </BrowserRouter>
