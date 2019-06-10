@@ -5,7 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Films/>
+      <Films config={{title: 'hola'}}/>
+      <div style={{backgroundColor: 'white', padding: 10}}>
+        <div className="allFilms">loremsdasawdadasdsad</div>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Film from './film';
+import './filmsStyles.css';
 
 class Films extends Component{
     constructor(props){
@@ -38,7 +39,7 @@ class Films extends Component{
     }
 
     render(){
-        return <div>
+        return <div className="allFilms">
             <h1>Mis peliculas</h1>
             {this.state.films.map((film, i) => <Film key={i} {...film}/>)}
             <form onSubmit={this.onAddFilm}>
