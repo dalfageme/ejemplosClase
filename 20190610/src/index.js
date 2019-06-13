@@ -10,12 +10,15 @@ import Detail from './components/detail';
 
 const router = (
     <BrowserRouter>
-        <Switch>
-            <Route path="/" component={Index} exact/>
-            <Route path="/films" component={Films} exact/>
-            <Route path="/films/:id" component={Detail} exact/>
-            <Route path="/users/:idUsuario" component={Users}/>
-        </Switch>
+        <div>
+            <h1>hola</h1>
+            <Switch>
+                <Route path="/" component={Index} exact/>
+                <Route path="/films" component={Films} exact/>
+                <Route path="/films/:id" component={Detail} exact/>
+                <Route path="/users/:idUsuario" component={Users}/>
+            </Switch>
+        </div>
     </BrowserRouter>
 );
 

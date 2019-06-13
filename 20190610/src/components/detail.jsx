@@ -6,6 +6,7 @@ import{api_key,api_url,img_url } from '../config.js';
 class Detail extends Component{
     constructor(props){
         super(props);
+        console.log(props)
         this.state = {
             film: null
         }
@@ -19,6 +20,9 @@ class Detail extends Component{
                 film
             })
         })
+
+        props.history.block('Are you sure you want to leave this page?');
+
     }
 
     render(){
