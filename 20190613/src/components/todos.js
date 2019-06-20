@@ -4,19 +4,24 @@ import AddTodo  from './addTodo';
 import TodoItem from './todo';
 
 class Todos extends React.Component{
+    constructor(props){
+        super(props);
+        this.myRef = React.createRef();
+    }
     render(){
-        console.log(this.props)
         return <div>
             <AddTodo/>
             <h1>Todos</h1>
-            {  this.props.todos.map((t) => <TodoItem key={t.id} {...t}/>)}
+            <div className="todos" ref={this.myRef}>
+                {  this.props.todos.map((t) => <TodoItem key={t.id}  {...t}/>)}
+            </div>
         </div>
     }
 }
 
 function mapStateToProps(state){
     return {
-        todos: state.todos
+        todos: state.comics
     }
 }
 

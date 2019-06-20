@@ -8,5 +8,5 @@ export function addTodo(text) {
         text,
         id: index++
     };
-    store.dispatch(myAction)
+    store.dispatch(myAction);
 }
