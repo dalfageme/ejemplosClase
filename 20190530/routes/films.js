@@ -3,9 +3,10 @@ const CONN = require('../helpers/dbConnection');
 const filmsController = require('../controllers/films');
 
 const router = express.Router();
+const { isLogged } = require('../middlewares/auth');
 
 // Listado de peliculas
-router.get('/', async (req, res) => {
+router.get('/', isLogged ,async (req, res) => {
     let films = await filmsController.getFilms();
     let userName = req.session.name;
     res.render('films', {
