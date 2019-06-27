@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ClicksService } from './services/clicks.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(
+    private cs: ClicksService
+  ) {
+  }
+
   title = 'helloWorld';
   valorInputInicio = 0;
   counters = [
@@ -24,6 +31,7 @@ export class AppComponent {
   ];
 
   addCounter() {
+    this.cs.addClick();
     this.counters.push({
       initValue: this.valorInputInicio,
       max: 3,

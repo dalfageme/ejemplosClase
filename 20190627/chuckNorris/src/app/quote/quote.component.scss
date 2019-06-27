@@ -1,0 +1,23 @@
+article{
+    background-color: #333;
+    border-radius: 3px;
+    display: flex;
+    color: white;
+    padding: 10px;
+
+    span{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+
+    q{
+        font-size: 1.5em;
+        margin-top: 3px;
+    }
+
+    time{
+        margin-bottom: 3px;
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ClicksService } from '../services/clicks.service';
 
 @Component({
   selector: 'app-counter',
@@ -13,16 +14,20 @@ export class CounterComponent implements OnInit {
   @Input() min: number;
   @Input() step: number;
 
-  constructor() {
+  constructor(
+    private clicksService: ClicksService
+  ) {
   }
 
   increment() {
+    this.clicksService.addClick();
     if (this.value + this.step <= this.max) {
       this.value += this.step;
     }
   }
 
   decrement() {
+    this.clicksService.addClick();
     if ( this.value - this.step >= this.min) {
       this.value -= this.step;
     }
@@ -30,7 +35,5 @@ export class CounterComponent implements OnInit {
 
   ngOnInit() {
     this.value = this.initValue;
-    console.log(this.max, this.min, this.step);
   }
-
 }
