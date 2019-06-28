@@ -18,9 +18,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.quotesService.getQuote().subscribe((quote) => {
+    this.quotesService.quotesEmitter.subscribe((quote) => {
       this.currentQuote = quote;
     });
   }
-
 }
